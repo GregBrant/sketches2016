@@ -36,7 +36,6 @@ class ofApp : public ofBaseApp{
 
 		int 				threshold;
 		bool				bLearnBakground;
-
-
+    
 };
 

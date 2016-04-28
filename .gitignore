@@ -1,3 +1,7 @@
+#Xcode
+*/openCvFun.xcodeproj  
+*/openCvFun.xcodeproj/*
+
 # Compiled Object files
 *.slo
 *.lo
@@ -29,3 +33,5 @@
 *.out
 *.app
 
+
+*.xcuserstate
