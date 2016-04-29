@@ -19,26 +19,28 @@ void Particle::setup(int _x, int _y, int _r)
 
 void Particle::update(float frame)
 {
-    float c = cos(frame);
-    float rc = c * radius;
-    float xrc = x + rc;
+    first.x = x + cos(frame) * radius;
+    first.y = y + sin(frame) * radius;
     
-    cout << "f:   " << frame << endl;
-    cout << "c:   " << c << endl;
-    cout << "rc:  " << rc << endl;
-    cout << "xrc: " << xrc << endl;
+    second.x = first.x + cos(frame * 2) * radius/2;
+    second.y = first.y + sin(frame * 2) * radius/2;
     
-    
-    first.x = xrc;
-    first.y = y + (sin(frame) * (double)radius);
+    third.x = second.x + cos(frame * 5) * radius/3;
+    third.y = second.y + sin(frame * 5) * radius/3;
 }
 
 void Particle::draw()
 {
     // Registration point
     ofSetColor(255, 100, 20);
-    ofDrawRectangle(x, y, 1, 1);
+    ofDrawRectangle(x, y, 3, 3);
     
     ofSetColor(100, 255, 20);
-    ofDrawRectangle(first, 1, 1);
+    ofDrawRectangle(first, 3, 3);
+    
+    ofSetColor(20, 100, 255);
+    ofDrawRectangle(second, 3, 3);
+    
+    ofSetColor(255, 255, 255);
+    ofDrawRectangle(third, 3, 3);
 }
