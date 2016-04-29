@@ -19,14 +19,18 @@ void Particle::setup(int _x, int _y, int _r)
 
 void Particle::update(float frame)
 {
-    first.x = x + cos(frame * 1.1) * radius;
-    first.y = y + sin(frame * 1.1) * radius;
+    float m1 = 0.9;
+    float m2 = 5.1;
+    float m3 = 8;
     
-    second.x = first.x + cos(frame * 3.4) * radius/2;
-    second.y = first.y + sin(frame * 3.4) * radius/2;
+    first.x = x + cos(frame * m1) * radius;
+    first.y = y + sin(frame * m1) * radius;
     
-    third.x = second.x + cos(frame * 5.5) * radius/3;
-    third.y = second.y + sin(frame * 5.5) * radius/3;
+    second.x = first.x + cos(frame * m2) * radius/2;
+    second.y = first.y + sin(frame * m2) * radius/2;
+    
+    third.x = second.x + cos(frame * m3) * radius/3;
+    third.y = second.y + sin(frame * m3) * radius/3;
 }
 
 void Particle::draw()
