@@ -4,13 +4,14 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetFrameRate(60);
+    ofSetBackgroundAuto(false);
     ofBackground(100);
     particle.setup(ofGetWidth() / 2, ofGetHeight() / 2, 100);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    float frame = ofGetElapsedTimef();
+    float frame = ofGetElapsedTimef() * 1.5;
     particle.update(frame);
 }
 
