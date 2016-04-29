@@ -10,7 +10,7 @@ void ofApp::setup(){
     savename = ofGetTimestampString();
     createDir(savename);
     
-    ofSetFrameRate(30);
+    ofSetFrameRate(60);
     //ofSetVerticalSync(true);
     
     // Scene setup
@@ -33,7 +33,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetColor(100, 100);
+    ofSetColor(100, 1);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     particle.draw();
 }
