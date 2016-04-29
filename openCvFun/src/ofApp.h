@@ -1,9 +1,11 @@
 #pragma once
 
+#include <ofxOpenCv.h>
+
 #include "ofMain.h"
+#include "Particle.hpp"
 
-#include "ofxOpenCv.h"
-
+using namespace std;
 
 class ofApp : public ofBaseApp{
 
@@ -36,6 +38,8 @@ class ofApp : public ofBaseApp{
 
 		int 				threshold;
 		bool				bLearnBakground;
+    
+        vector<Particle>    particles;
     
 };
 

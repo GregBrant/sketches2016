@@ -42,6 +42,10 @@ void ofApp::update(){
 		// also, find holes is set to true so we will get interior contours as well....
 		contourFinder.findContours(grayDiff, 20, (340*240)/3, 10, true);	// find holes
 	}
+    
+    for (int i =0; i < particles.size(); i++) {
+        particles[i].update();
+    }
 
 }
 
@@ -69,6 +73,10 @@ void ofApp::draw(){
 	// this is how to get access to them:
     for (int i = 0; i < contourFinder.nBlobs; i++){
         contourFinder.blobs[i].draw(360,540);
+        
+        ofPoint c = contourFinder.blobs[i].boundingRect.getCenter();
+        ofSetColor(255, 50, 50);
+        ofDrawCircle(20 + c.x, 2- + c.y, 50);
 		
 		// draw over the centroid if the blob is a hole
 		ofSetColor(255);
@@ -88,6 +96,10 @@ void ofApp::draw(){
 			  << "num blobs found " << contourFinder.nBlobs << ", fps: " << ofGetFrameRate();
 	ofDrawBitmapString(reportStr.str(), 20, 600);
 
+    
+    for (int i =0; i < particles.size(); i++) {
+        particles[i].update();
+    }
 }
 
 //--------------------------------------------------------------
