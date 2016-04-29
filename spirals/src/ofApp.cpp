@@ -1,9 +1,19 @@
+#include "stdio.h"
 #include "ofMain.h"
 #include "ofApp.h"
 
+using namespace std;
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofSetFrameRate(60);
+    // Video setup
+    savename = ofGetTimestampString();
+    createDir(savename);
+    
+    ofSetFrameRate(30);
+    //ofSetVerticalSync(true);
+    
+    // Scene setup
     ofSetBackgroundAuto(false);
     ofBackground(100);
     particle.setup(ofGetWidth() / 2, ofGetHeight() / 2, 100);
@@ -11,7 +21,13 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    float frame = ofGetElapsedTimef() * 1.5;
+    
+    int f = ofGetFrameNum();
+    ofSaveScreen(savename + "/" + ofToString(f) + ".png");
+    
+    
+    frameNum ++;
+    float frame = ofGetElapsedTimef();
     particle.update(frame);
 }
 
@@ -73,4 +89,12 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+void ofApp::createDir(string path)
+{
+    ofDirectory dir(path);
+    if(!dir.exists()){
+        dir.create(true);
+    }
 }

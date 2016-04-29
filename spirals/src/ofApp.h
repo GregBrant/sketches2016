@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "Particle.hpp"
 
+using namespace std;
+
 class ofApp : public ofBaseApp
 {
 	public:
@@ -21,7 +23,11 @@ class ofApp : public ofBaseApp
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+        void createDir(string path);
     
     Particle particle;
+    string savename;
+    int frameNum;
+    ofDirectory output;
 		
 };
