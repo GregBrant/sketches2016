@@ -33,6 +33,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofSetColor(100, 100);
+    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     particle.draw();
 }
 

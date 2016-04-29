@@ -21,7 +21,7 @@ void Particle::update(float frame)
 {
     float m1 = 0.9;
     float m2 = 5.1;
-    float m3 = 8;
+    float m3 = 21;
     
     first.x = x + cos(frame * m1) * radius;
     first.y = y + sin(frame * m1) * radius;
