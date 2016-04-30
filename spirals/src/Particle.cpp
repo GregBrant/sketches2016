@@ -14,7 +14,7 @@ void Particle::setup(int _x, int _y, int _r)
 {
     x = _x;
     y = _y;
-    radius = _r;
+    maxRadius = _r;
 }
 
 void Particle::update(float frame)
@@ -22,6 +22,8 @@ void Particle::update(float frame)
     float m1 = 0.3;
     float m2 = 1.9;
     float m3 = 6;
+    
+    int radius = getRadius(frame);
     
     first.x = x + cos(frame * m1) * radius;
     first.y = y + sin(frame * m1) * radius;
@@ -48,3 +50,32 @@ void Particle::draw()
     ofSetColor(255, 255, 255);
     ofDrawRectangle(third, 3, 3);
 }
+
+int Particle::getRadius(float frame)
+{
+    float r = ofMap(frame, 0, 5, 0, 2);
+    
+    cout << "f: " << frame << endl;
+    cout << "r: " << r << endl;
+    
+    if(r > 1)
+    {
+        return (1 - r) * maxRadius;
+    }
+    
+    return r * maxRadius;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

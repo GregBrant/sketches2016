@@ -18,10 +18,11 @@ public:
     void setup(int _x, int _y, int _r);
     void update(float frame);
     void draw();
+    int getRadius(float frame);
     
     int x;
     int y;
-    int radius;
+    int maxRadius;
     
     ofPoint first;
     ofPoint second;
