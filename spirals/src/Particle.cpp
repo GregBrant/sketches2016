@@ -48,7 +48,7 @@ void Particle::draw()
     //ofDrawRectangle(second, 3, 3);
     
     ofSetColor(255, 255, 255);
-    ofDrawRectangle(third, 3, 3);
+    ofDrawRectangle(third, 2, 2);
 }
 
 int Particle::getRadius(float frame)
