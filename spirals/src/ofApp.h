@@ -29,5 +29,5 @@ class ofApp : public ofBaseApp
     string savename;
     int frameNum;
     ofDirectory output;
-		
+    bool save;
 };

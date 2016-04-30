@@ -6,6 +6,7 @@ using namespace std;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    save = false;
     // Video setup
     savename = ofGetTimestampString();
     createDir(savename);
@@ -22,8 +23,11 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    int f = ofGetFrameNum();
-    ofSaveScreen(savename + "/" + ofToString(f) + ".png");
+    if(save)
+    {
+        int f = ofGetFrameNum();
+        ofSaveScreen(savename + "/" + ofToString(f) + ".png");
+    }
     
     
     frameNum ++;
