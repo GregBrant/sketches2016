@@ -36,9 +36,15 @@ void ofApp::update(){
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
-    ofSetColor(100, 1);
-    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+
+void ofApp::draw()
+{
+    if(ofGetFrameNum() % 4 == 0)
+    {
+        ofSetColor(50, 1);
+        ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+    }
+    
     particle.draw();
 }
 

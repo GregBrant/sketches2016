@@ -19,9 +19,9 @@ void Particle::setup(int _x, int _y, int _r)
 
 void Particle::update(float frame)
 {
-    float m1 = 0.9;
-    float m2 = 6.1;
-    float m3 = 18;
+    float m1 = 0.3;
+    float m2 = 1.9;
+    float m3 = 6;
     
     first.x = x + cos(frame * m1) * radius;
     first.y = y + sin(frame * m1) * radius;
@@ -36,14 +36,14 @@ void Particle::update(float frame)
 void Particle::draw()
 {
     // Registration point
-    ofSetColor(255, 100, 20);
-    ofDrawRectangle(x, y, 3, 3);
+    //ofSetColor(255, 100, 20);
+    //ofDrawRectangle(x, y, 3, 3);
     
-    ofSetColor(100, 255, 20, 100);
-    ofDrawRectangle(first, 3, 3);
+    //ofSetColor(100, 255, 20);
+    //ofDrawRectangle(first, 3, 3);
     
-    ofSetColor(20, 100, 255);
-    ofDrawRectangle(second, 3, 3);
+    //ofSetColor(20, 100, 255);
+    //ofDrawRectangle(second, 3, 3);
     
     ofSetColor(255, 255, 255);
     ofDrawRectangle(third, 3, 3);
