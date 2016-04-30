@@ -50,7 +50,11 @@ void ofApp::draw()
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if(key == 's')
+    {
+        int f = ofGetFrameNum();
+        ofSaveScreen(savename + "/" + ofToString(f) + ".png");
+    }
 }
 
 //--------------------------------------------------------------
